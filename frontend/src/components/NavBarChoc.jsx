@@ -16,12 +16,17 @@ import {
   useColorMode,
   VStack,
 } from '@chakra-ui/react';
+import { useHistory } from 'react-router-dom';
 import { AiFillHome, AiOutlineInbox, AiOutlineMenu } from 'react-icons/ai';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
 
 const NavBarChoc = () => {
+  const history = useHistory();
+  const handleNavigateAbout = () => {
+    history.push('/about');
+  };
   const bg = useColorModeValue('white', 'gray.800');
   const cl = useColorModeValue('gray.800', 'white');
   const mobileNav = useDisclosure();
@@ -380,7 +385,12 @@ const NavBarChoc = () => {
           <Spacer />
           <Box display="flex" alignItems="center">
             <HStack spacing={1}>
-              <Button colorScheme="blue" variant="ghost" size="sm">
+              <Button
+                onClick={handleNavigateAbout}
+                colorScheme="blue"
+                variant="ghost"
+                size="sm"
+              >
                 Sign in
               </Button>
               <Button colorScheme="blue" variant="solid" size="sm">
