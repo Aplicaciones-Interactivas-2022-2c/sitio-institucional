@@ -1,7 +1,6 @@
 import { ChakraProvider, Container, theme } from '@chakra-ui/react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import AboutPage from 'pages/AboutPage';
-import HomePage from 'pages/HomePage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SignInPage, SignUpPage, HomePage, AboutPage } from './pages';
 import NavBarChoc from 'components/NavBarChoc';
 
 function App() {
@@ -10,14 +9,12 @@ function App() {
       <Router>
         <NavBarChoc />
         <Container bg="blue.600" maxW="container.xl" centerContent>
-          <Switch>
-            <Route path="/about">
-              <AboutPage />
-            </Route>
-            <Route path="/">
-              <HomePage />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/about" element={<AboutPage />}></Route>
+            <Route path="/home" element={<HomePage />}></Route>
+            <Route path="/signin" element={<SignInPage />}></Route>
+            <Route path="/signup" element={<SignUpPage />}></Route>
+          </Routes>
         </Container>
       </Router>
     </ChakraProvider>
