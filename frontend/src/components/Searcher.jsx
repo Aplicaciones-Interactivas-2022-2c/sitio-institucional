@@ -55,6 +55,7 @@ const Searcher = () => {
                 key={`option-${frecuencia.id}`}
                 value={frecuencia.label}
                 textTransform="capitalize"
+                onChange={getFrecuencia}
               >
                 {frecuencia.label}
               </AutoCompleteItem>
@@ -64,6 +65,80 @@ const Searcher = () => {
       </FormControl>
         );
     }
+
+    const DropdownMateria = () => {
+        return (
+            <FormControl w="60">
+        <FormLabel>materias</FormLabel>
+        <AutoComplete openOnFocus>
+            <AutoCompleteInput variant="filled" />
+            <AutoCompleteList>
+                {materias.map((materia, cid) => (
+                    <AutoCompleteItem
+
+                        key={`option-${materia.id}`}
+                        value={materia.label}
+                        textTransform="capitalize"
+                        onChange={getSelectedMateria}
+                    >
+                        {materia.label}
+                    </AutoCompleteItem>
+                ))}
+            </AutoCompleteList>
+        </AutoComplete>
+    </FormControl>
+        );
+
+    }
+
+
+    const DropdownTipoDeClase = () => {
+        return (
+            <FormControl w="60">
+        <FormLabel>tipos de clases</FormLabel>
+        <AutoComplete openOnFocus>
+            <AutoCompleteInput variant="filled" />
+            <AutoCompleteList>
+                {tiposDeClases.map((tipoDeClase, cid) => (
+                    <AutoCompleteItem
+                    key={`option-${tipoDeClase.id}`}
+                    value={tipoDeClase.label}
+                    textTransform="capitalize"
+                    onChange={getTipoDeClase}
+                >
+                    {tipoDeClase.label}
+                </AutoCompleteItem>
+            ))}
+        </AutoCompleteList>
+    </AutoComplete>
+</FormControl>
+    );
+
+}
+
+const DropdownCalificacion = () => {
+    return (
+        <FormControl w="60">
+    <FormLabel>calificaciones</FormLabel>
+    <AutoComplete openOnFocus>
+        <AutoCompleteInput variant="filled" />
+        <AutoCompleteList>
+            {calificaciones.map((calificacion, cid) => (
+                <AutoCompleteItem
+                key={`option-${calificacion.id}`}
+                value={calificacion.label}
+                textTransform="capitalize"
+                onChange={getCalificacion}
+            >
+                {calificacion.label}
+            </AutoCompleteItem>
+        ))}
+    </AutoCompleteList>
+</AutoComplete>
+</FormControl>
+);
+            }   
+
     const buscarClases = () => {
         navigate(`/clases?clase=${materia?.label}&frecuencia=${frecuencia?.label}&tipoDeClase=${tipoDeClase?.label}&calificacion=${calificacion?.label}`, { state: {
                 materia,
@@ -74,13 +149,13 @@ const Searcher = () => {
     };
     return (<div>
         <div>
-        <DropdownFrecuencia></DropdownFrecuencia>
+        <DropdownMateria></DropdownMateria>
         </div>
         <div >
         <DropdownFrecuencia></DropdownFrecuencia>
         </div>
         <div >
-        <DropdownFrecuencia></DropdownFrecuencia>
+        <DropdownTipoDeClase></DropdownTipoDeClase>
         </div>
         <div>
           <DropdownFrecuencia></DropdownFrecuencia>
