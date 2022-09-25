@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, chakra, Flex, Stack, Image } from '@chakra-ui/react';
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <Box p={10} h="100%">
       <Flex
@@ -127,5 +127,3 @@ const HomePage = () => {
     </Box>
   );
 };
-
-export default HomePage;
