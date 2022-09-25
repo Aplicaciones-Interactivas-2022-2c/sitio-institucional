@@ -140,7 +140,7 @@ const DropdownCalificacion = () => {
             }   
 
     const buscarClases = () => {
-        navigate(`/clases?clase=${materia?.label}&frecuencia=${frecuencia?.label}&tipoDeClase=${tipoDeClase?.label}&calificacion=${calificacion?.label}`, { state: {
+        navigate(`/clases?materia=${materia?.label}&frecuencia=${frecuencia?.label}&tipoDeClase=${tipoDeClase?.label}&calificacion=${calificacion?.label}`, { state: {
                 materia,
                 tipoDeClase,
                 frecuencia,
