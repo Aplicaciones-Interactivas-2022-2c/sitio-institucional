@@ -62,7 +62,7 @@ export const HomePage = () => {
               color: 'gray.300',
             }}
           >
-            Hellonext is a feature voting software where you can allow your
+            Hello Juan is a feature voting software where you can allow your
             users to vote on features, publish roadmap, and complete your
             customer feedback loop.
           </chakra.p>
@@ -120,7 +120,7 @@ export const HomePage = () => {
             rounded="lg"
             shadow="2xl"
             src="https://kutty.netlify.app/hero.jpg"
-            alt="Hellonext feedback boards software screenshot"
+            alt="Hello Juan feedback boards software screenshot"
           />
         </Box>
       </Flex>
