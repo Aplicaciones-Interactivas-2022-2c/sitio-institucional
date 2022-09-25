@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Dan",
+      "surname": "Abrahmov",
+      "email": "dan-abramov@gmail.com",
+      "password": "dan-abramov",
+      "rol": "profesor",
+      "avatar": "https://bit.ly/dan-abramov"
+    },
+    {
+      "id": 2,
+      "name": "Kent",
+      "surname": "Dodds",
+      "email": "kent-c-dodds@gmail.com",
+      "password": "kent-c-dodds",
+      "rol": "alumno",
+      "avatar": "https://bit.ly/kent-c-dodds"
+    },
+    {
+      "id": 3,
+      "name": "Ryan",
+      "surname": "Florence",
+      "email": "ryan-florence@gmail.com",
+      "password": "ryan-florence",
+      "rol": "profesor",
+      "avatar": "https://bit.ly/ryan-florence"
+    },
+    {
+      "id": 4,
+      "name": "Segun",
+      "surname": "Adebayo",
+      "email": "segun-adebayo@gmail.com",
+      "password": "segun-adebayo",
+      "rol": "alumno",
+      "avatar": "https://bit.ly/segun-adebayo"
+    },
+    {
+      "email": "josepalau10@gmail.com",
+      "name": "Maria Josefina",
+      "surname": "Palau Posse",
+      "rol": "alumno",
+      "password": "asdadad",
+      "id": 5
+    }
+  ],
+  "materias": [
+    {
+      "nombre": "matematica",
+      "imagen": "/recursos/matematica"
+    }
+  ]
+}
