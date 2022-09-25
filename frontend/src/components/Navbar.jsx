@@ -29,15 +29,17 @@ import { FiMenu, FiSearch } from 'react-icons/fi';
 import { HiCollection, HiCode } from 'react-icons/hi';
 import { BsGearFill } from 'react-icons/bs';
 import { MdKeyboardArrowRight, MdHome } from 'react-icons/md';
+import { useLogout } from 'hooks/useLogout';
+import { useAuthContext } from 'hooks/useAuthContext';
 
 const Navbar = props => {
-  //const user = props.user;
-  const user = false;
   const bg = useColorModeValue('white', 'gray.800');
   const mobileNav = useDisclosure();
   const { toggleColorMode: toggleMode } = useColorMode();
   const text = useColorModeValue('dark', 'light');
   const SwitchDarkModeIcon = useColorModeValue(FaMoon, FaSun);
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
 
   const ColorModeButton = () => {
     return (
@@ -59,7 +61,7 @@ const Navbar = props => {
 
   const RegisterButtons = () => {
     return (
-      <Box>
+      <HStack spacing={3}>
         <Link as={RouterLink} to={'/signin'}>
           <Button colorScheme="blue" variant="ghost" size="sm">
             Sign in
@@ -70,17 +72,28 @@ const Navbar = props => {
             Sign Up
           </Button>
         </Link>
-      </Box>
+      </HStack>
     );
   };
 
   const UserAvatar = () => {
     return (
-      <Avatar
-        as={IconButton}
-        name={user.name + user.surname}
-        src="https://bit.ly/dan-abramov"
-      />
+      <HStack spacing={3}>
+        <Avatar
+          as={IconButton}
+          name={user.name + ' ' + user.surname}
+          src={user.avatar}
+        />
+        <Button
+          px={3}
+          onClick={logout}
+          colorScheme="blue"
+          variant="solid"
+          size="sm"
+        >
+          Log out
+        </Button>
+      </HStack>
     );
   };
 

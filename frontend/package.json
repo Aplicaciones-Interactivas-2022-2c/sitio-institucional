@@ -20,8 +20,8 @@
   },
   "scripts": {
     "react-scripts": "react-scripts start",
-    "json-server": "json-server -w fakedb.json -p 3030",
-    "start": "npm run json-server & npm run react-scripts",
+    "json-server-db": "json-server -w fakedb.json -p 3030",
+    "start": "npm run json-server-db & npm run react-scripts",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

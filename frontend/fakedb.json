@@ -35,7 +35,20 @@
       "password": "segun-adebayo",
       "rol": "alumno",
       "avatar": "https://bit.ly/segun-adebayo"
+    },
+    {
+      "email": "josepalau10@gmail.com",
+      "name": "Maria Josefina",
+      "surname": "Palau Posse",
+      "rol": "alumno",
+      "password": "asdadad",
+      "id": 5
     }
   ],
-  "materias": [{ "nombre": "matematica", "imagen": "/recursos/matematica" }]
+  "materias": [
+    {
+      "nombre": "matematica",
+      "imagen": "/recursos/matematica"
+    }
+  ]
 }

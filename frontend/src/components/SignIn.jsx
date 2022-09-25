@@ -11,36 +11,23 @@ import {
   Text,
   InputGroup,
   InputRightElement,
-  Icon
+  IconButton,
 } from '@chakra-ui/react';
 
 import ErrorMessage from '../components/ErrorMessage';
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import { useLogin } from 'hooks/useLogin';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const { login, isLoading, error } = useLogin();
 
   const handleSubmit = async event => {
     event.preventDefault();
-
-    setIsLoading(true);
-
-    try {
-      
-      setIsLoggedIn(true);
-      setIsLoading(false);
-      setShowPassword(false);
-    } catch (error) {
-      setError('Invalid username or password');
-      setIsLoading(false);
-      setEmail('');
-      setPassword('');
-      setShowPassword(false);
-    }
+    await login(email, password);
   };
 
   const handlePasswordVisibility = () => setShowPassword(!showPassword);
@@ -58,7 +45,6 @@ export default function SignIn() {
           <Box textAlign="center">
             <Text>{email} logged in!</Text>
             <Button
-              variantColor="orange"
               variant="outline"
               width="full"
               mt={4}
@@ -86,35 +72,25 @@ export default function SignIn() {
                 </FormControl>
                 <FormControl isRequired mt={6}>
                   <FormLabel>Password</FormLabel>
-                  <InputGroup>
+                  <InputGroup alignItems={'center'}>
                     <Input
                       type={showPassword ? 'text' : 'password'}
                       placeholder="*******"
                       size="lg"
                       onChange={event => setPassword(event.currentTarget.value)}
                     />
-                    <InputRightElement width="3rem">
-                      <Button
-                        h="1.5rem"
+                    <InputRightElement pr="3">
+                      <IconButton
+                        alignSelf="self-end"
+                        aria-label="Show password"
                         size="sm"
                         onClick={handlePasswordVisibility}
-                      >
-                        {showPassword ? (
-                          <Icon name="view-off" />
-                        ) : (
-                          <Icon name="view" />
-                        )}
-                      </Button>
+                        icon={showPassword ? <FaEyeSlash /> : <FaEye />}
+                      />
                     </InputRightElement>
                   </InputGroup>
                 </FormControl>
-                <Button
-                  variantColor="teal"
-                  variant="outline"
-                  type="submit"
-                  width="full"
-                  mt={4}
-                >
+                <Button variant="outline" type="submit" width="full" mt={4}>
                   {isLoading ? (
                     <CircularProgress
                       isIndeterminate
