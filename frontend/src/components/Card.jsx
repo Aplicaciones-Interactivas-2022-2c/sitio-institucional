@@ -13,6 +13,7 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
 import { StarIcon } from '@chakra-ui/icons';
+import { Link as ReachLink } from 'react-router-dom';
   
 
 
@@ -85,7 +86,10 @@ import { StarIcon } from '@chakra-ui/icons';
               _focus={{
                 bg: 'gray.200',
               }}>
-              Mensaje
+                <Link as={ReachLink} to='/comments'>
+                Comentarios
+            </Link>
+              
             </Button>
             <Button
               flex={1}
