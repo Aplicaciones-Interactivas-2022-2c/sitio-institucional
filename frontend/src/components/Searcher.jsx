@@ -8,12 +8,10 @@ import {
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
+import { materias } from 'data/materias';
 
 const Searcher = () => {
-  const materias = [
-    { label: 'test', id: 1 },
-    { label: 'test2', id: 2 },
-  ];
+  
   const frecuencias = [
     { label: 'Unica', id: 1 },
     { label: 'Semanal', id: 2 },
@@ -30,7 +28,7 @@ const Searcher = () => {
     { label: '4', id: 4 },
     { label: '5', id: 5 },
   ];
-  const [materia, setMateria] = useState({ label: '', id: '' });
+  const [materiaSelect, setMateria] = useState({ title: '', id: '' });
   const getSelectedMateria = (event, value) => {
     setMateria(value);
   };
@@ -77,7 +75,7 @@ const Searcher = () => {
             {materias.map((materia, cid) => (
               <AutoCompleteItem
                 key={`option-${materia.id}`}
-                value={materia.label}
+                value={materia.title}
                 textTransform="capitalize"
                 onChange={getSelectedMateria}
               >
@@ -128,17 +126,26 @@ const Searcher = () => {
   };
 
   const buscarClases = () => {
-    navigate(
-      `/clases?materia=${materia?.label}&frecuencia=${frecuencia?.label}&tipoDeClase=${tipoDeClase?.label}&calificacion=${calificacion?.label}`,
-      {
-        state: {
-          materia,
-          tipoDeClase,
-          frecuencia,
-          calificacion,
-        },
+    //filter materias json and return to Cards the json filtered by materias, tipo de clase, frecuencia, calificacion
+    var jsonNuevo = {}
+    materias.filter((materia) => {
+      if (materia.title === materiaSelect.title) {
+        jsonNuevo.append(materia)
+
       }
-    );
+      if (materia.tipoDeClase === tipoDeClase.label) {
+        jsonNuevo.append(materia)
+      }
+        if (materia.frecuencia === frecuencia.label) {
+          jsonNuevo.append(materia)
+        }
+        if (materia.calificacion === calificacion.label) {
+          jsonNuevo.append(materia)
+        }
+    })
+    navigate('/home', { state: jsonNuevo });
+    
+    
   };
   return (
     <div className='container'>

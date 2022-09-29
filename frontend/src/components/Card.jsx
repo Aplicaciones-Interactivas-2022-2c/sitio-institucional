@@ -12,6 +12,7 @@ import {
     Badge,
     useColorModeValue,
   } from '@chakra-ui/react';
+import { StarIcon } from '@chakra-ui/icons';
   
 
 
@@ -29,7 +30,7 @@ import {
           <Avatar
             size={'xl'}
             src={
-              'https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
+              props.materia.image
             }
             mb={4}
             pos={'relative'}
@@ -64,16 +65,18 @@ import {
                 props.materia.frecuencia
               }
             </Badge>
-            <Badge
-              px={2}
-              py={1}
-              bg={useColorModeValue('gray.50', 'gray.800')}
-              fontWeight={'400'}>
-                Calificacion: 
-             {props.materia.calificacion}
-            </Badge>
+        
           </Stack>
-  
+          <Stack mt="2" direction={'row'} alignItems="center">
+          {Array(5)
+              .fill("")
+              .map((_, i) => (
+                <StarIcon
+                  key={i}
+                  color={i < props.materia.calificacion ? "teal.500" : "gray.300"}
+                />
+              ))}
+        </Stack>
           <Stack mt={8} direction={'row'} spacing={4}>
             <Button
               flex={1}
