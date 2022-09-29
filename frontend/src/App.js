@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Container bg="blue.600" maxW="container.xl" centerContent>
         <Routes>
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/home" element={<HomePage />}></Route>
@@ -29,7 +28,6 @@ function App() {
             element={!user ? <SignUpPage /> : <Navigate to="/home" />}
           ></Route>
         </Routes>
-      </Container>
     </Router>
   );
 }

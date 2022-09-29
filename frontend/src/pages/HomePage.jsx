@@ -1,9 +1,13 @@
 import React from 'react';
 import { Box, chakra, Flex, Stack, Image } from '@chakra-ui/react';
+import Searcher from 'components/Searcher';
+import Cards from 'components/Cards';
 
 export const HomePage = () => {
   return (
     <Box p={10} h="100%">
+      <Searcher></Searcher>
+      <Cards></Cards>
       <Flex
         direction={{
           base: 'column',
