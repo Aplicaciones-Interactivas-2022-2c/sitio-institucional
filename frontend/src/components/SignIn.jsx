@@ -12,6 +12,7 @@ import {
   InputGroup,
   InputRightElement,
   IconButton,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 import ErrorMessage from '../components/ErrorMessage';
@@ -24,6 +25,7 @@ export default function SignIn() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { login, isLoading, error } = useLogin();
+  const bg = useColorModeValue('blue.500', 'blue.900');
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -33,13 +35,14 @@ export default function SignIn() {
   const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
   return (
-    <Flex width="full" align="center" justifyContent="center">
+    <Flex width="full" align="center" justifyContent="center" h="90vh">
       <Box
         p={8}
         maxWidth="500px"
         borderWidth={1}
         borderRadius={8}
         boxShadow="lg"
+        bg={bg}
       >
         {isLoggedIn ? (
           <Box textAlign="center">

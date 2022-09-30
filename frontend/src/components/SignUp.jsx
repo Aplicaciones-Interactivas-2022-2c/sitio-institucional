@@ -15,6 +15,7 @@ import {
   RadioGroup,
   HStack,
   Radio,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import ErrorMessage from '../components/ErrorMessage';
@@ -29,6 +30,7 @@ export default function SignUp() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { signup, error, isLoading } = useSignup();
+  const bg = useColorModeValue('blue.500', 'blue.900');
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -38,8 +40,15 @@ export default function SignUp() {
   const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
   return (
-    <Flex width="full" align="center" justifyContent="center">
+    <Flex
+      width="full"
+      align="center"
+      justifyContent="center"
+      justifyItems="center"
+      h="90vh"
+    >
       <Box
+        bg={bg}
         p={8}
         maxWidth="500px"
         borderWidth={1}
