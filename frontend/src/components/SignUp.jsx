@@ -92,7 +92,7 @@ export default function SignUp() {
                   />
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel as="legend">Favorite Naruto Character</FormLabel>
+                  <FormLabel as="legend">Tipo de Usuarior</FormLabel>
                   <RadioGroup
                     onChange={setRol}
                     value={rol}

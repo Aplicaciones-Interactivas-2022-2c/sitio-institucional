@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import { SignInPage, SignUpPage, HomePage, AboutPage } from './pages';
+import { SignInPage, SignUpPage, HomePage, AboutPage, CommentsPage } from './pages';
 import Navbar from 'components/Navbar';
 import React from 'react';
 import { useAuthContext } from 'hooks/useAuthContext';
@@ -16,10 +16,11 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Container bg="blue.600" maxW="container.xl" centerContent>
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/home" element={<HomePage />}></Route>
+          <Route path="/comments" element={<CommentsPage />}></Route>
           <Route
             path="/signin"
             element={!user ? <SignInPage /> : <Navigate to="/home" />}
@@ -29,7 +30,6 @@ function App() {
             element={!user ? <SignUpPage /> : <Navigate to="/home" />}
           ></Route>
         </Routes>
-      </Container>
     </Router>
   );
 }
