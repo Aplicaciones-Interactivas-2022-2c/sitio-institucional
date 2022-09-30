@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, chakra, Stack, Button, FormControl, FormLabel, GridItem, Input, Select, SimpleGrid } from '@chakra-ui/react';
 
-export const FormulariosN = () => {
+export const FormRoleAlum = () => {
     return (
 
 

@@ -1,11 +1,11 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { FormulariosN } from 'components/FormRegistro';
+import { FormMateria } from 'components/FormMateria';
 
 export const SignUpPage = () => {
   return (
     <Box p={10} h="100%">
-      <h2><FormulariosN></FormulariosN></h2>
+      <h2><FormMateria></FormMateria></h2>
     </Box>
   );
 }

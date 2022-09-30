@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, chakra, Stack, Button, FormControl, FormLabel, GridItem, Input, Select, SimpleGrid } from '@chakra-ui/react';
 
-export const FormulariosN = () => {
+export const FormRegistro = () => {
     return (
 
 
@@ -23,8 +23,8 @@ export const FormulariosN = () => {
                 }}
                 spacing={6}
             >
-                <SimpleGrid columns={6} spacing={6}>
-                    <FormControl as={GridItem} colSpan={[6, 3]}>
+                <SimpleGrid columns={8} spacing={5}>
+                    <FormControl as={GridItem} colSpan={[6, 6]}>
                         <FormLabel
                             htmlFor="nombre"
                             fontSize="sm"
@@ -50,7 +50,7 @@ export const FormulariosN = () => {
                         />
                     </FormControl>
 
-                    <FormControl as={GridItem} colSpan={[6, 3]}>
+                    <FormControl as={GridItem} colSpan={[6, 6]}>
                         <FormLabel
                             htmlFor="apellido"
                             fontSize="sm"
@@ -76,9 +76,9 @@ export const FormulariosN = () => {
                         />
                     </FormControl>
 
-                    <FormControl as={GridItem} colSpan={[6, 4]}>
+                    <FormControl as={GridItem} colSpan={[6, 6]}>
                         <FormLabel
-                            htmlFor="correo"
+                            htmlFor="telefono"
                             fontSize="sm"
                             fontWeight="md"
                             color="gray.700"
@@ -86,13 +86,13 @@ export const FormulariosN = () => {
                                 color: "gray.50",
                             }}
                         >
-                            Correo
+                            Telefono
                         </FormLabel>
                         <Input
                             type="text"
-                            name="correo"
-                            id="correo"
-                            autoComplete="email"
+                            name="telefono"
+                            id="telefono"
+                            autoComplete="telefono"
                             mt={1}
                             focusBorderColor="brand.400"
                             shadow="sm"
@@ -102,9 +102,9 @@ export const FormulariosN = () => {
                         />
                     </FormControl>
 
-                    <FormControl as={GridItem} colSpan={[6, 3]}>
+                    <FormControl as={GridItem} colSpan={[6, 6]}>
                         <FormLabel
-                              htmlFor="telefono"
+                              htmlFor="correo"
                               fontSize="sm"
                               fontWeight="md"
                               color="gray.700"
@@ -115,10 +115,10 @@ export const FormulariosN = () => {
                               Correo
                           </FormLabel>
                           <Input
-                              type="num"
-                              name="telefono"
-                              id="telefono"
-                              autoComplete="telefono"
+                              type="text"
+                              name="correo"
+                              id="correo"
+                              autoComplete="correo"
                               mt={1}
                               focusBorderColor="brand.400"
                               shadow="sm"
@@ -129,7 +129,7 @@ export const FormulariosN = () => {
                         
                     </FormControl>
 
-                    <FormControl as={GridItem} colSpan={6}>
+                    <FormControl as={GridItem} colSpan={[6, 6]}>
                         <FormLabel
                             htmlFor="role"
                             fontSize="sm"

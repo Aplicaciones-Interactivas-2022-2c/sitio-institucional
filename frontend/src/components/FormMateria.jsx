@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, chakra, Stack, Button, FormControl, FormLabel, GridItem, Input, Select, SimpleGrid } from '@chakra-ui/react';
 
-export const FormulariosN = () => {
+export const FormMateria = () => {
     return (
 
 
@@ -24,7 +24,7 @@ export const FormulariosN = () => {
                 spacing={6}
             >
                 <SimpleGrid columns={6} spacing={6}>
-                    <FormControl as={GridItem} colSpan={[6, 3]}>
+                    <FormControl as={GridItem} colSpan={[6, 6]}>
                         <FormLabel
                             htmlFor="nombre"
                             fontSize="sm"
