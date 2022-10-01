@@ -1,4 +1,6 @@
+
 import { Center, Container } from '@chakra-ui/react';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +17,7 @@ import {
 import Navbar from 'components/Navbar';
 import React from 'react';
 import { useAuthContext } from 'hooks/useAuthContext';
+
 
 function App() {
   const { user } = useAuthContext();
