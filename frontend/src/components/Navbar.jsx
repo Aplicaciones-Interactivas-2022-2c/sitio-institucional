@@ -33,7 +33,7 @@ import { useLogout } from 'hooks/useLogout';
 import { useAuthContext } from 'hooks/useAuthContext';
 
 const Navbar = props => {
-  const bg = useColorModeValue('white', 'gray.800');
+  const bg = useColorModeValue('blue.500', 'blue.900');
   const mobileNav = useDisclosure();
   const { toggleColorMode: toggleMode } = useColorMode();
   const text = useColorModeValue('dark', 'light');
@@ -313,6 +313,9 @@ const Navbar = props => {
           sm: 4,
         }}
         py={4}
+        position="sticky"
+        top="0"
+        zIndex="1"
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Box

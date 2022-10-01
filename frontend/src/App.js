@@ -1,12 +1,19 @@
 
-import { Container } from '@chakra-ui/react';
+import { Center, Container } from '@chakra-ui/react';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from 'react-router-dom';
-import { SignInPage, SignUpPage, HomePage, AboutPage, CommentsPage } from './pages';
+import {
+  SignInPage,
+  SignUpPage,
+  HomePage,
+  AboutPage,
+  CommentsPage,
+} from './pages';
 import Navbar from 'components/Navbar';
 import React from 'react';
 import { useAuthContext } from 'hooks/useAuthContext';
@@ -18,6 +25,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <Center>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />}></Route>
@@ -32,6 +40,7 @@ function App() {
             element={!user ? <SignUpPage /> : <Navigate to="/home" />}
           ></Route>
         </Routes>
+      </Center>
     </Router>
   );
 }
