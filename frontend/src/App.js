@@ -1,5 +1,4 @@
-
-import { Center, Container } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 
 import {
   BrowserRouter as Router,
@@ -11,13 +10,14 @@ import {
   SignInPage,
   SignUpPage,
   HomePage,
-  AboutPage,
+  LandingPage,
   CommentsPage,
+  NotFoundPage,
+  DevelopPage,
 } from './pages';
 import Navbar from 'components/Navbar';
 import React from 'react';
 import { useAuthContext } from 'hooks/useAuthContext';
-
 
 function App() {
   const { user } = useAuthContext();
@@ -25,10 +25,10 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Center>
+      <Container centerContent>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />}></Route>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/develop" element={<DevelopPage />}></Route>
           <Route path="/home" element={<HomePage />}></Route>
           <Route path="/comments" element={<CommentsPage />}></Route>
           <Route
@@ -39,8 +39,10 @@ function App() {
             path="/signup"
             element={!user ? <SignUpPage /> : <Navigate to="/home" />}
           ></Route>
+          <Route path="/404" element={<NotFoundPage />}></Route>
+          <Route path="*" element={<Navigate to="/404" />}></Route>
         </Routes>
-      </Center>
+      </Container>
     </Router>
   );
 }
