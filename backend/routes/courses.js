@@ -1,5 +1,6 @@
 const { response } = require("express");
 const express = require("express");
+const ROLE_LIST = require("../config/roles_list");
 const {
   createCourse,
   getCourses,
@@ -7,11 +8,13 @@ const {
   deleteCourse,
   updateCourse,
 } = require("../controllers/CoursesController");
+const requireAuth = require("../middleware/requireAuth");
+const verifyRoles = require("../middleware/verifyRoles");
 
 const router = express.Router();
 
 //GET all Courses
-router.get("/", getCourses);
+router.get("/", requireAuth, verifyRoles(ROLE_LIST.Admin), getCourses);
 
 //GET a single Course
 router.get("/:id", getCourse);

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
+const ROLE_LIST = require("../config/roles_list");
 
 const Schema = mongoose.Schema;
 
@@ -23,8 +24,9 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    rol: {
-      type: String,
+    roles: {
+      type: Object,
+      enum: ROLE_LIST,
       required: true,
     },
     image: {
