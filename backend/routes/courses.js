@@ -14,7 +14,7 @@ const verifyRoles = require("../middleware/verifyRoles");
 const router = express.Router();
 
 //GET all Courses
-router.get("/", requireAuth, verifyRoles(ROLE_LIST.Admin), getCourses);
+router.get("/", requireAuth, verifyRoles(ROLE_LIST.Alumno), getCourses);
 
 //GET a single Course
 router.get("/:id", getCourse);

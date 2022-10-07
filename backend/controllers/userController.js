@@ -29,7 +29,7 @@ const signupUser = async (req, res) => {
     surname: req.body.surname,
     email: req.body.email,
     password: req.body.password,
-    role: req.body.role,
+    roles: req.body.roles,
     image: req.body.image,
   });
 
