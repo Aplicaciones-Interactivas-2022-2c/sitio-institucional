@@ -18,7 +18,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
-import ErrorMessage from '../components/ErrorMessage';
+import ErrorMessage from 'components/ErrorMessage';
 import { useSignup } from 'hooks/useSignup';
 
 export default function SignUp() {

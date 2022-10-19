@@ -9,6 +9,7 @@ export const coursesReducer = (state, action) => {
         courses: action.payload,
       };
     case 'CREATE_COURSE':
+      console.log(state);
       return {
         courses: [action.payload, ...state.courses],
       };
@@ -23,7 +24,7 @@ export const coursesReducer = (state, action) => {
 
 export const CoursesContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(coursesReducer, {
-    COURSEs: null,
+    courses: null,
   });
 
   return (

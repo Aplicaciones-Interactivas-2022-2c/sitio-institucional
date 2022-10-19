@@ -1,5 +1,4 @@
-
-import { Center, Container } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 
 import {
   BrowserRouter as Router,
@@ -11,36 +10,68 @@ import {
   SignInPage,
   SignUpPage,
   HomePage,
-  AboutPage,
+  LandingPage,
   CommentsPage,
+  NotFoundPage,
+  DevelopPage,
+  ProfesorPage,
+  UnauthorizedPage,
 } from './pages';
 import Navbar from 'components/Navbar';
 import React from 'react';
-import { useAuthContext } from 'hooks/useAuthContext';
+import {
+  ShouldBeUnsigned,
+  RequireAuth,
+} from 'components/authentication/RequireAuth';
+import { useAuthContext as useAuth } from 'hooks/useAuthContext';
 
+const ROLES = {
+  Alumno: 5150,
+  Profesor: 1984,
+  Admin: 2001,
+};
 
 function App() {
-  const { user } = useAuthContext();
-
+  const { user } = useAuth();
   return (
     <Router>
       <Navbar />
-      <Center>
+      <Container centerContent>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />}></Route>
-          <Route path="/home" element={<HomePage />}></Route>
-          <Route path="/comments" element={<CommentsPage />}></Route>
+          {/*Temporary rute for development*/}
+          <Route path="/develop" element={<DevelopPage />} />
+          {/* Public Routes */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/comments" element={<CommentsPage />} />
           <Route
             path="/signin"
-            element={!user ? <SignInPage /> : <Navigate to="/home" />}
-          ></Route>
+            element={<ShouldBeUnsigned user={user} Route={SignInPage} />}
+          />
           <Route
             path="/signup"
-            element={!user ? <SignUpPage /> : <Navigate to="/home" />}
-          ></Route>
+            element={<ShouldBeUnsigned user={user} Route={SignUpPage} />}
+          />
+          <Route path="/home" element={<HomePage />} />
+
+          {/*Protected*/}
+          <Route
+            path="/profesor"
+            element={
+              <RequireAuth
+                user={user}
+                Route={ProfesorPage}
+                allowedRoles={[ROLES.Profesor]}
+              />
+            }
+          />
+
+          {/*Error Routes*/}
+          <Route path="/401" element={<UnauthorizedPage />} />
+          <Route path="/404" element={<NotFoundPage />} />
+          <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
-      </Center>
+      </Container>
     </Router>
   );
 }

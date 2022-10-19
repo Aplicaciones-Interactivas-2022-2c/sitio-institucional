@@ -2,7 +2,7 @@ import { Box, Heading, Text, Button, Link } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import React from 'react';
 
-export default function NotFound() {
+export default function Unauthorized() {
   return (
     <Box textAlign="center" py={10} px={6}>
       <Heading
@@ -12,13 +12,13 @@ export default function NotFound() {
         bgGradient="linear(to-r, teal.400, teal.600)"
         backgroundClip="text"
       >
-        404
+        401
       </Heading>
       <Text fontSize="18px" mt={3} mb={2}>
-        Page Not Found
+        Unauthorized
       </Text>
       <Text color={'gray.500'} mb={6}>
-        The page you're looking for does not seem to exist
+        You do not have access permission to the requested page.
       </Text>
 
       <Link as={RouterLink} to={'/home'}>
