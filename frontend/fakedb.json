@@ -6,7 +6,7 @@
       "surname": "Abrahmov",
       "email": "dan-abramov@gmail.com",
       "password": "dan-abramov",
-      "rol": "profesor",
+      "roles": [1984],
       "avatar": "https://bit.ly/dan-abramov"
     },
     {
@@ -15,7 +15,7 @@
       "surname": "Dodds",
       "email": "kent-c-dodds@gmail.com",
       "password": "kent-c-dodds",
-      "rol": "alumno",
+      "roles": [5150],
       "avatar": "https://bit.ly/kent-c-dodds"
     },
     {
@@ -24,7 +24,7 @@
       "surname": "Florence",
       "email": "ryan-florence@gmail.com",
       "password": "ryan-florence",
-      "rol": "profesor",
+      "roles": [1984],
       "avatar": "https://bit.ly/ryan-florence"
     },
     {
@@ -33,14 +33,14 @@
       "surname": "Adebayo",
       "email": "segun-adebayo@gmail.com",
       "password": "segun-adebayo",
-      "rol": "alumno",
+      "roles": [5150],
       "avatar": "https://bit.ly/segun-adebayo"
     },
     {
       "email": "josepalau10@gmail.com",
       "name": "Maria Josefina",
       "surname": "Palau Posse",
-      "rol": "alumno",
+      "roles": [5150],
       "password": "asdadad",
       "id": 5
     }

@@ -25,8 +25,7 @@ const userSchema = new Schema(
       required: true,
     },
     roles: {
-      type: Object,
-      enum: ROLE_LIST,
+      type: [Number],
       required: true,
     },
     image: {

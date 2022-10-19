@@ -9,14 +9,12 @@ const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
 root.render(
-  <React.StrictMode>
-    <AuthContextProvider>
-      <CoursesContextProvider>
-        <ChakraProvider theme={theme}>
-          <ColorModeScript />
-          <App />
-        </ChakraProvider>
-      </CoursesContextProvider>
-    </AuthContextProvider>
-  </React.StrictMode>
+  <AuthContextProvider>
+    <CoursesContextProvider>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript />
+        <App />
+      </ChakraProvider>
+    </CoursesContextProvider>
+  </AuthContextProvider>
 );
