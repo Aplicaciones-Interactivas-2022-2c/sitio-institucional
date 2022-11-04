@@ -30,8 +30,7 @@ export default function SignUp() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { signup, error, isLoading } = useSignup();
-  const bg = useColorModeValue('blue.500', 'blue.900');
-
+  const bgButton = useColorModeValue('teal.100', 'blue.900');
   const handleSubmit = async event => {
     event.preventDefault();
     await signup(email, name, surname, rol, password);
@@ -48,7 +47,6 @@ export default function SignUp() {
       h="90vh"
     >
       <Box
-        bg={bg}
         p={8}
         maxWidth="500px"
         borderWidth={1}
@@ -70,7 +68,7 @@ export default function SignUp() {
         ) : (
           <>
             <Box textAlign="center">
-              <Heading>Register</Heading>
+              <Heading>Registrarse</Heading>
             </Box>
             <Box my={4} textAlign="left">
               <form onSubmit={handleSubmit}>
@@ -79,29 +77,29 @@ export default function SignUp() {
                   <FormLabel>Email</FormLabel>
                   <Input
                     type="email"
-                    placeholder="test@test.com"
+                    placeholder="test@gmail.com"
                     size="lg"
                     onChange={event => setEmail(event.currentTarget.value)}
                   />
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Nombre</FormLabel>
                   <Input
-                    placeholder="name"
+                    placeholder="Nombre"
                     size="lg"
                     onChange={event => setName(event.currentTarget.value)}
                   />
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel>Surname</FormLabel>
+                  <FormLabel>Apellido</FormLabel>
                   <Input
-                    placeholder="surname"
+                    placeholder="Apellido"
                     size="lg"
                     onChange={event => setSurname(event.currentTarget.value)}
                   />
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel as="legend">Tipo de Usuarior</FormLabel>
+                  <FormLabel as="legend">Tipo de Usuario</FormLabel>
                   <RadioGroup
                     onChange={setRol}
                     value={rol}
@@ -113,6 +111,29 @@ export default function SignUp() {
                     </HStack>
                   </RadioGroup>
                 </FormControl>
+
+                {rol==='profesor' && (
+              
+                  <FormControl isRequired paddingTop={"4"}>
+                    <FormLabel>Experiencia</FormLabel>
+                    <Input
+                      placeholder="Experiencia lABORAL"
+                      size="lg"></Input>
+                  </FormControl>)}
+               
+                {rol==='alumno' && (
+                  <FormControl isRequired paddingTop={"4"}>
+                    <FormLabel>Estudios</FormLabel>
+                    <RadioGroup>
+                      <HStack spacing="24px">
+                        <Radio value="primaria">Primaria</Radio>
+                        <Radio value="secundaria">Secundaria</Radio>
+                        <Radio value="universitario">Universitario</Radio>
+                      </HStack>
+                    </RadioGroup>
+                      </FormControl>)}
+    
+
                 <FormControl isRequired mt={6}>
                   <FormLabel>Password</FormLabel>
                   <InputGroup alignContent="center">
@@ -133,7 +154,7 @@ export default function SignUp() {
                     </InputRightElement>
                   </InputGroup>
                 </FormControl>
-                <Button variant="outline" type="submit" width="full" mt={4}>
+                <Button variant="outline" type="submit" width="full" mt={4} bg = {bgButton} >
                   {isLoading ? (
                     <CircularProgress
                       isIndeterminate
@@ -141,7 +162,7 @@ export default function SignUp() {
                       color="teal"
                     />
                   ) : (
-                    'Sign Up'
+                    'Registrarse!'
                   )}
                 </Button>
               </form>

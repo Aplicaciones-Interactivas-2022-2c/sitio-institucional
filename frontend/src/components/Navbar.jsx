@@ -33,7 +33,7 @@ import { useLogout } from 'hooks/useLogout';
 import { useAuthContext } from 'hooks/useAuthContext';
 
 const Navbar = props => {
-  const bg = useColorModeValue('blue.500', 'blue.900');
+  const bg = useColorModeValue('blue.400', 'blue.900');
   const mobileNav = useDisclosure();
   const { toggleColorMode: toggleMode } = useColorMode();
   const text = useColorModeValue('dark', 'light');

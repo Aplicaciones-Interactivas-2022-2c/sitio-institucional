@@ -23,7 +23,7 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const { login, isLoading, error } = useLogin();
-  const bg = useColorModeValue('blue.500', 'blue.900');
+  const bg = useColorModeValue('teal.500', 'teal.900');
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -33,14 +33,13 @@ export default function SignIn() {
   const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
   return (
-    <Flex width="full" align="center" justifyContent="center" h="90vh">
+    <Flex width="full" align="center" justifyContent="center" h="50vh">
       <Box
         p={8}
-        maxWidth="500px"
+
         borderWidth={1}
         borderRadius={8}
         boxShadow="lg"
-        bg={bg}
       >
         <Box textAlign="center">
           <Heading>Login</Heading>
@@ -52,7 +51,7 @@ export default function SignIn() {
               <FormLabel>Email</FormLabel>
               <Input
                 type="email"
-                placeholder="test@test.com"
+                placeholder="test@gmail.com.com"
                 size="lg"
                 onChange={event => setEmail(event.currentTarget.value)}
               />
@@ -77,7 +76,7 @@ export default function SignIn() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Button variant="outline" type="submit" width="full" mt={4}>
+            <Button variant="outline" type="submit" width="full" mt={4} bg={bg}>
               {isLoading ? (
                 <CircularProgress isIndeterminate size="24px" color="teal" />
               ) : (
