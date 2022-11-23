@@ -2,30 +2,32 @@ const { response } = require("express");
 const express = require("express");
 const ROLE_LIST = require("../config/roles_list");
 const {
-  createCourse,
-  getCourses,
-  getCourse,
-  deleteCourse,
-  updateCourse,
-} = require("../controllers/CoursesController");
+  createComment,
+  getComments,
+  getComment,
+  deleteComment,
+  updateComment
+} = require("../controllers/commentsController");
 const requireAuth = require("../middleware/requireAuth");
 const verifyRoles = require("../middleware/verifyRoles");
 
 const router = express.Router();
 
-//GET all Courses
-router.get("/", requireAuth, verifyRoles(ROLE_LIST.Alumno), getCourses);
+//GET all Comments
+router.get("/", requireAuth, verifyRoles(ROLE_LIST.Alumno), getComments);
 
-//GET a single Course
-router.get("/:id", getCourse);
+//GET a single Comment
+router.get("/:id", getComment);
 
-//POST a new Course
-router.post("/", createCourse);
+//POST a new Comment
+router.post("/", createComment);
 
-//DELETE a new Course
-router.delete("/:id", deleteCourse);
+//DELETE a new Comment
+router.delete("/:id", deleteComment);
 
-//UPDATE a Course
-router.patch(updateCourse);
+//UPDATE a Comment
+router.patch(updateComment);
+
+  
 
 module.exports = router;

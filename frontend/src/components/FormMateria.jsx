@@ -53,7 +53,6 @@ export const FormMateria = () => {
         borderWidth={1}
         borderRadius={8}
         boxShadow="lg"
-        bg={bg}
       >
         <Box textAlign="center">
           <Heading>Crear Materia</Heading>
@@ -105,7 +104,7 @@ export const FormMateria = () => {
               </FormControl>
 
               <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                <FormLabel>Duracion</FormLabel>
+                <FormLabel>Duracion (hs)</FormLabel>
                 <NumberInput
                   defaultValue={1}
                   precision={0}

@@ -2,40 +2,28 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const courseSchema = new Schema(
+const commentSchema = new Schema(
   {
-    title: {
+    author: {
       type: String,
       required: true,
     },
-    image: {
+    comment: {
       type: String,
       required: true,
     },
-    descripcion: {
+    idCourse: {
       type: Number,
       required: true,
     },
-    frecuencia: {
-      type: String,
-      required: true,
-    },
-    tipoDeClase: {
-      type: String,
-      required: true,
-    },
-    calificacion: {
-      type: Number,
-      required: true,
-    },
-    idProfesor: {
-      type: Number,
-      required: true,
-    },
+    isBlocked: {
+      type: Boolean,
+    }
+
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("course", courseSchema);
+module.exports = mongoose.model("comment", commentSchema);
