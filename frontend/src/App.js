@@ -24,6 +24,7 @@ import {
   RequireAuth,
 } from 'components/authentication/RequireAuth';
 import { useAuthContext as useAuth } from 'hooks/useAuthContext';
+import { RegisterPage } from 'pages/RegisterPage';
 
 const ROLES = {
   Alumno: 5150,
@@ -43,7 +44,6 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/comments" element={<CommentsPage />} />
           <Route
             path="/signin"
             element={<ShouldBeUnsigned user={user} Route={SignInPage} />}
@@ -53,6 +53,8 @@ function App() {
             element={<ShouldBeUnsigned user={user} Route={SignUpPage} />}
           />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/comments/:id" element={<CommentsPage />} />
+          <Route path="/register/:id" element={<RegisterPage />} />
 
           {/*Protected*/}
           <Route
