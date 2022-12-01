@@ -15,6 +15,8 @@ import CommentsProfessorComponent from '../CommentsProfessorComponent/CommentsPr
 import styles from "./ProfessorCoursesComponent.module.scss";
 import { getName, getUserId } from '../../hooks/authhook';
 import { deleteClass, filterClass, updateClass } from '../../services/class.service';
+
+
 export default function ProfessorCoursesComponent() {
 
     const theme = useTheme();

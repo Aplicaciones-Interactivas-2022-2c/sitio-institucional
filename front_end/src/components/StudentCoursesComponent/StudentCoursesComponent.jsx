@@ -6,7 +6,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import Footer from '../FooterComponent/FooterComponent';
 import ModalComentarComponent from '../ModalComentarComponent/ModalComentarComponent';
-import styles from "./MateriasInscritasComponent.module.scss";
+import styles from "./StudentCoursesComponent.module.scss";
 import { getName, getUserId } from '../../hooks/authhook';
 import ModalCancelarComponent from '../ModalCancelarComponent/ModalCancelarComponent';
 import { findEnrollments } from '../../services/class-enrollment.service';

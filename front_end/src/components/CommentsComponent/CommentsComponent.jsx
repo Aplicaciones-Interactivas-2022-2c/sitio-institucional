@@ -23,8 +23,6 @@ const CommentsComponent = (props) => {
   return (
     <Box
       sx={{
-        borderStyle: "dashed",
-        borderColor: "#00000086",
         my: 1,
         mx: "auto",
         padding: 1,

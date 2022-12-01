@@ -9,9 +9,7 @@ const ClasesComponent = (props) => {
     const state = location.state; 
     return (<div>
     <NavbarComponent></NavbarComponent>
-    <h1 className={styles.title}>¡Bienvenido a nuestras clases!</h1>
-    <h4 className={styles.subtitle}>Disfruta de esta experiencia única</h4>
-  
+    <h1 className={styles.title}>Todo tipo de clases</h1>
     <GridComponent filters={state}></GridComponent>
     <FooterComponent></FooterComponent>
   </div>);

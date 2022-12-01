@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
-const LazyMateriasInscritasComponent = lazy(() => import('./MateriasInscritasComponent'));
-const MateriasInscritasComponent = (props) => (<Suspense fallback={null}>
-    <LazyMateriasInscritasComponent {...props}/>
+const LazyStudentCoursesComponent = lazy(() => import('./StudentCoursesComponent'));
+const StudentCoursesComponent = (props) => (<Suspense fallback={null}>
+    <LazyStudentCoursesComponent {...props}/>
   </Suspense>);
-export default MateriasInscritasComponent;
+export default StudentCoursesComponent;

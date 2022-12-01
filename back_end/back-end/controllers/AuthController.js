@@ -6,27 +6,27 @@ const nodemailer = require('nodemailer')
 
 
 module.exports = {
-
-
-    // Login
+    // We sign in
     signIn(req, res) {
 
         let { email, password } = req.body;
 
-        // Buscar usuario
+        // find the user by email
         user.findOne({
             where: {
                 email: email
             }
         }).then(user => {
 
+            // if the user does not exist
             if (!user) {
                 res.status(404).json({ msg: "Usuario con este correo no encontrado" });
             } else {
 
+                // if the user exists, we compare the password
                 if (bcrypt.compareSync(password, user.password)) {
 
-                    // Creamos el token
+                    // We create a hwt token
                     let token = jwt.sign({ user: user }, authConfig.secret, {
                         expiresIn: authConfig.expires
                     });
@@ -50,13 +50,13 @@ module.exports = {
 
     },
 
-    // Registro
+    // Create a new user
     signUp(req, res) {
 
-        // Encriptamos la contraseña
+        // Encrypt the password
         let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds));
 
-        // Crear un usuario
+        // We create the user
         user.create({
             name: req.body.name,
             surname: req.body.surname,
@@ -66,7 +66,7 @@ module.exports = {
             type: req.body.type
         }).then(user => {
 
-            // Creamos el token
+            // Create the token
             let token = jwt.sign({ user: user }, authConfig.secret, {
                 expiresIn: authConfig.expires
             });

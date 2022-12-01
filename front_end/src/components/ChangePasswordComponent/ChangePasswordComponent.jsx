@@ -53,8 +53,8 @@ export default function ChangePasswordComponent(props) {
             flexDirection: "column",
             alignItems: "center",
             border: 1,
-            padding: 2,
-            boxShadow: 20,
+            padding: 1,
+            boxShadow: 15,
           }}
         >
           <Typography component="h1" variant="h5">

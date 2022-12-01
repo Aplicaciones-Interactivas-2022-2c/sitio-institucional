@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import { deleteComment } from "../../services/comment.service";
-import styles from "./BlockStudentCommentComponent.module.scss";
 
 // We Block the comments of a student
 const BlockStudentCommentComponent = (props) => {
@@ -51,7 +50,7 @@ const BlockStudentCommentComponent = (props) => {
       <DialogContent>
         Quiere bloquear el comentario?
         <br></br>
-        <span className={styles.comentario}>"{props.comentario}"</span>
+        <span>"{props.comentario}"</span>
         <br></br>
         <TextField
           sx={{ my: 1, width: "100%" }}

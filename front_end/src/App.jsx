@@ -4,7 +4,7 @@ import "./App.css";
 import ClassesComponent from "./components/ClassesComponent/ClassesComponent";
 import HomeComponent from "./components/HomeComponent/HomeComponent.lazy";
 import LoginComponent from "./components/LoginComponent/LoginComponent.lazy";
-import MateriasInscritasComponent from "./components/MateriasInscritasComponent/MateriasInscritasComponent.lazy";
+import StudentCoursesComponent from "./components/StudentCoursesComponent/StudentCoursesComponent.lazy";
 import SignupComponent from "./components/SignupComponent/SignupComponent.lazy";
 import ResetPasswordComponent from "./components/ResetPasswordComponent/ResetPasswordComponent";
 import ProfessorCoursesComponent from "./components/ProfessorCoursesComponent/ProfessorCoursesComponent";
@@ -53,7 +53,7 @@ function App() {
           path="/assigned-classes"
           element={<ProfessorCoursesComponent />}
         />
-        <Route path="/inscriptions" element={<MateriasInscritasComponent />} />
+        <Route path="/inscriptions" element={<StudentCoursesComponent />} />
         <Route path="/reset-password" element={<ResetPasswordComponent />} />
         <Route path="/publish-class" element={<PublishClassComponent />} />
         <Route path="/modify-account" element={<ModifyProfileComponent />} />
