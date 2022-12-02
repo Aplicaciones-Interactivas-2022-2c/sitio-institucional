@@ -1,0 +1,38 @@
+
+.barra {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    
+}
+
+.title {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 5px;
+
+}
+
+.title:hover {
+    color: darkorange;
+    text-decoration: none;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    margin: 2px;
+    
+}
+
+.login {
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+
