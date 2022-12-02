@@ -86,7 +86,7 @@ export default function SignUp() {
                   <TextField className={styles.box} required fullWidth id="lastName" label="Apellido" name="lastName" autoComplete="family-name"/>
                 </Grid>
                 <Grid item xs={12}>
-                  <PhoneInput placeholder="" specialLabel="Numero de telefono" country={'ar'} onChange={setPhoneValue}/>
+                  <PhoneInput sx= {{m:1,bgcolor:"background.paper"}} placeholder="" specialLabel="Numero de telefono" country={'ar'} onChange={setPhoneValue}/>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField className={styles.box} required fullWidth id="email" label="Mail" name="email" autoComplete="email"/>
