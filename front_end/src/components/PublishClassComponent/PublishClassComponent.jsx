@@ -15,12 +15,13 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { addClass } from '../../services/class.service';
 import { getUserId } from '../../hooks/authhook';
-
+import { Snackbar, Alert } from '@mui/material';
 
 
 export default function PublishClassComponent() {
     const theme = useTheme();
     const [tipoClase, setClassType] = React.useState('grupal');
+    const [message, setMessage] = React.useState(false)
     const handleChangeClassType = (event) => {
         setClassType(event.target.value);
     };
@@ -44,6 +45,8 @@ export default function PublishClassComponent() {
                 cost: parseInt(data.get('cost').toString()),
             };
             await addClass(createClassPayload);
+            setMessage(true);
+
         }
         catch (error) {
             console.log(error);
@@ -125,8 +128,13 @@ export default function PublishClassComponent() {
                 Publicar
               </Button>
             </Box>
-
           </Box>
+
+          <Snackbar open={message} autoHideDuration={6000} onClose={() => setMessage(false)}>
+            <Alert onClose={() => setMessage(false)} severity="success" sx={{ width: '100%' }}>
+               Clase creada con exito!
+            </Alert>
+          </Snackbar>
           <FooterComponent></FooterComponent>
         </Container>
       </ThemeProvider>

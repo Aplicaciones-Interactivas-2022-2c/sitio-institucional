@@ -16,17 +16,14 @@ import { getType, isLoggedIn } from "../../hooks/authhook";
 function Home() {
     const GuestorAlumnoView = () => {
         return (<><h2 className={styles.title}>
-      ¡Las mejores clases de la ciudad!
+      Busca la clase que quieras
     </h2>
-    <h3 className={styles.subtitle}>
-        ¡Disfruta de esta experiencia única!
-    </h3>
     <FormComponent></FormComponent>
     </>);
     };
     const ProfessorView = () => {
         return (<>
-      <h1 className={styles.title}>¡Se parte de nosotros!</h1>
+      <h1 className={styles.title}>Dicta clases</h1>
       <h3 className={styles.subtitle}>- Puedes dictar tus clases con la modalidad que mas te interese.</h3>
     </>);
     };
@@ -55,7 +52,7 @@ function Home() {
                 ],
             },
             {
-                title: '2. ',
+                title: '2. Completa los datos',
                 description: [
                     'Rellena el formulario con los datos requeridos y listo, asi de facil'
                 ]
