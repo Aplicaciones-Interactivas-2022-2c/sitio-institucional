@@ -240,8 +240,7 @@ export default function ProfessorCoursesComponent() {
             my: 0, mx: "auto", padding: 2 }}>
           <DataGrid rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5]} disableSelectionOnClick experimentalFeatures={{ newEditingApi: true }} sx={{ border: 1 }} processRowUpdate={editStopHandler}/>
         </Box>
-        <Button className={styles.boton} onClick={guardarCambios()} sx={{ alignContent: "center", my: 3, mx: "auto", padding: 2,
-            borderRadius: 3, color: "#ffffff" }}>Guardar</Button>
+        <Button className={styles.boton} onClick={guardarCambios()} sx={{ alignContent: "center", my: 3, mx: "auto", padding: 2,bgcolor:'primary.main',color:'black'}}>Guardar</Button>
       </div>
       <SolicitudesComponent row={selectedRow} open={openSolicitudes} handleClose={handleCloseSolicitudes}></SolicitudesComponent>
       <CommentsProfessorComponent clase={selectedRow.name} open={openComentarios} handleClose={handleCloseComentarios} comentarios={selectedComentarios}></CommentsProfessorComponent>

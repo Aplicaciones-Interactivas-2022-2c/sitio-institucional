@@ -94,7 +94,7 @@ const SolicitudesComponent = (props) => {
         Solicitudes de {props.row.name}
       </DialogTitle>
       <DialogContent>
-        <DataGrid sx={{ height: 800, width: "100%", border: 10, borderRadius: 3, borderColor: '#0a40c9e1', boxShadow: 20,
+        <DataGrid sx={{ height: 800, width: "100%", border: 10, borderRadius: 3,
             my: 0, mx: "auto", padding: 2 }} rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5]} disableSelectionOnClick experimentalFeatures={{ newEditingApi: true }}/>
       </DialogContent>
       <DialogActions>

@@ -16,15 +16,13 @@ import Settings from "@mui/icons-material/Settings";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import { isLoggedIn, getType, getName } from "../../hooks/authhook";
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 export default function ButtonAppBar() {
-  // Obtiene el usuario del sessionStorage
   const user = JSON.parse(sessionStorage.getItem("loggedUser"));
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
-  
-  
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -60,20 +58,12 @@ export default function ButtonAppBar() {
   const GuestButtons = () => {
     return (
       <>
-        <Typography
-          component="div"
-          sx={{ flexGrow: 0.1 }}
-          align="left"
-        >
+        <Typography component="div" sx={{ flexGrow: 0.1 }} align="left">
           <a className={styles.title} href="/">
             Inicio
           </a>
         </Typography>
-        <Typography
-          component="div"
-          sx={{ flexGrow: 1. }}
-          align="left"
-        >
+        <Typography component="div" sx={{ flexGrow: 1 }} align="left">
           <a className={styles.title} href="/classes">
             Clases
           </a>
@@ -156,7 +146,6 @@ export default function ButtonAppBar() {
     );
   };
   return (
-    
     <header>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" theme={theme}>
@@ -177,7 +166,6 @@ export default function ButtonAppBar() {
             {getType() == "student" && AlumnoButtons()}
             {!isLoggedIn() && GuestButtons()}
             {!isLoggedIn() && LoginButtons()}
-            
 
             <Tooltip title="Cuenta">
               <IconButton
