@@ -49,8 +49,8 @@ function sendMail(email, message) {
             host: 'smtp.ethereal.email',
             port: 587,
             auth: {
-              user: 'jared.hyatt@ethereal.email',
-              pass: 'skBh6Cb4kSBTKwHQM'
+              user: 'gillian.bergnaum31@ethereal.email',
+              pass: 'PxvgCNzVTfJEGt4pqE'
             }
       });
       const sendMail = {
